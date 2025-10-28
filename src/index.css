@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* 🧭 Base layer — general document setup */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #ffffff; /* same as bg-page */
+    color: #1f2937; /* same as text-ink */
+  }
+}
+/* 🎨 Utility classes (custom helpers) */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .text-ink\/70 {
+    color: #1A2B49;
+  }
+
+  /* Soft pastel backgrounds */
+  .bg-mint-50 { background-color: #e8fff4; }
+  .bg-peach-50 { background-color: #ffece2; }
+  .bg-grape-50 { background-color: #f3e8ff; }
+
+  /* Remove unwanted outlines or borders globally */
+* {
+  outline: none !important;
+  border-color: transparent !important;
+}
+
+/* Force entire page background to pure white */
+html,
+body,
+#root {
+  background-color: #ffffff !important;
+}
+
+}
