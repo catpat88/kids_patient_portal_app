@@ -1,3 +1,4 @@
+// Tailwind thme styles - colours, background, fonts, sho=adows, border rad etc
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
