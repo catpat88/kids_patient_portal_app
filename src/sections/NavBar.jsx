@@ -1,6 +1,7 @@
 const links = [
   { label: "My Profile", href: "#profile", emoji: "👤" },
   { label: "My Visit", href: "#visit", emoji: "🏥" },
+  { label: "Hospital Map", href: "#map", emoji: "🗺️" },
   { label: "Videos", href: "#videos", emoji: "🎬" },
   { label: "Games", href: "#games", emoji: "🎮" },
   { label: "Departments", href: "#departments", emoji: "🏷️" },
