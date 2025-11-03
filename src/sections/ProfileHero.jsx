@@ -10,7 +10,7 @@ export default function ProfileHero() {
             <img
               src="/images/heroIMG.png"
               alt="Hippo mascot"
-              className="w-40 h-40 md:w-52 md:h-52 object-contain"
+              className="w-60 h-60 md:w-72 md:h-72 object-contain"
             />
           </div>
         </div>
