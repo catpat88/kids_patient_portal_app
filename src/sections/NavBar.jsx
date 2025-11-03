@@ -1,11 +1,11 @@
 const links = [
-  { label: "My Profile", href: "#profile", emoji: "👤" },
-  { label: "My Visit", href: "#visit", emoji: "🏥" },
-  { label: "Hospital Map", href: "#map", emoji: "🗺️" },
-  { label: "Videos", href: "#videos", emoji: "🎬" },
-  { label: "Games", href: "#games", emoji: "🎮" },
-  { label: "Departments", href: "#departments", emoji: "🏷️" },
-  { label: "Quiz", href: "#quiz", emoji: "⭐" },
+  { label: "My Profile", href: "#profile", emoji: "👤", bgColor: "bg-blue-100" },
+  { label: "My Visit", href: "#visit", emoji: "🏥", bgColor: "bg-yellow-100"  }, 
+  { label: "Hospital Map", href: "#map", emoji: "🗺️", bgColor: "bg-purple-100"  },
+  { label: "Videos", href: "#videos", emoji: "🎬", bgColor: "bg-red-100" },
+  { label: "Games", href: "#games", emoji: "🎮", bgColor: "bg-green-100"  },
+  { label: "Departments", href: "#departments", emoji: "🏷️", bgColor: "bg-pink-100"  },
+  { label: "Quiz", href: "#quiz", emoji: "⭐", bgColor: "bg-blue-100"  },
 ];
 
 export default function NavBar() {
@@ -20,7 +20,8 @@ export default function NavBar() {
             <a
               key={l.label}
               href={l.href}
-              className="group flex items-center gap-2 rounded-full bg-white shadow-soft px-4 h-10 border hover:-translate-y-0.5 transition"
+              // ensures the navbar links are following the set colours
+              className={`group flex items-center gap-2 rounded-full ${l.bgColor} shadow-soft px-4 h-10 border hover:-translate-y-0.5 transition`}
             >
               <span className="text-xl">{l.emoji}</span>
               <span className="text-sm">{l.label}</span>
