@@ -11,8 +11,10 @@ const links = [
 export default function NavBar() {
   return (
     <header id="top" className="sticky top-0 z-20 bg-white/85 backdrop-blur border-b">
-      <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center gap-3">
-        <div className="font-semibold">Healthy Hippo Hub</div>
+      <nav className="mx-auto max-w-6xl px-4 h-20 flex items-center gap-3">
+        <div className>
+          <img src="./images/healthy-hippo-logo.png" alt="healthy hippo hub logo" className="max-h-20 object-contain" />
+        </div>
         <div className="ml-auto hidden md:flex gap-3">
           {links.map((l) => (
             <a
