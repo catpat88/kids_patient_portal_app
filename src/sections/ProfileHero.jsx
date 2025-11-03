@@ -23,14 +23,14 @@ export default function ProfileHero() {
           <p className="mt-1 text-ink/70">I’m 5 years old</p>
 
           <div className="mt-6 grid gap-3 max-w-md mx-auto md:mx-0">
-            <div className="rounded-xl bg-sky-50 px-4 py-3 shadow-soft">
+            <div className="rounded-xl bg-sky-100 px-4 py-3 shadow-soft">
               🛏️ My doctor is Dr. Smith
             </div>
             <div className="rounded-xl bg-mint-50 px-4 py-3 shadow-soft">
-              💉 My next appointment: 13 Nov, 10:30
+              📅 My next appointment: 13 Nov, 10:30
             </div>
             <div className="rounded-xl bg-peach-50 px-4 py-3 shadow-soft">
-              📋 My preparation: Packed my toy & snacks
+              💊 My medication: Paracetamol 4x a day for 5 days
             </div>
           </div>
         </div>

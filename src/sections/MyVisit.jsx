@@ -1,5 +1,5 @@
 const cards = [
-  { t: "Where am I going?", c: "Children’s Ward map and directions.", tone: "bg-sky-50" },
+  { t: "Where am I going?", c: "Children’s Ward map and directions.", tone: "bg-sky-100" },
   { t: "What can I bring?", c: "Comfy clothes, favorite toy, book.", tone: "bg-mint-50" },
   { t: "Who I will see", c: "Doctors and nurses who help me.", tone: "bg-peach-50" },
   { t: "Today’s steps", c: "Check-in, waiting room, nurse, doctor.", tone: "bg-grape-50" },
@@ -8,7 +8,7 @@ const cards = [
 export default function MyVisit() {
   return (
     <section id="visit" className="scroll-mt-24 py-10">
-      <div className="rounded-3xl bg-gray-50 p-6 md:p-8 border">
+      <div className="rounded-3xl bg-gray-100 p-6 md:p-8 border">
         <h2 className="text-lg font-semibold">My Visit</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
           {cards.map((x) => (
