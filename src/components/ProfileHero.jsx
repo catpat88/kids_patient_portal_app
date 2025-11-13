@@ -20,19 +20,19 @@ export default function ProfileHero() {
         {/* Right: Text + info */}
         <div className="text-center md:text-left">
           <h1 className="text-3xl md:text-4xl font-bold">
-            Hi, I’m Ella! <span className="align-middle">⭐</span>
+            Hi Ella! <span className="align-middle">⭐</span>
           </h1>
-          <p className="mt-1 text-ink/70">I’m 5 years old</p>
+          <p className="mt-1 text-ink/70">You are 5 years old</p>
 
           <div className="mt-6 grid gap-3 max-w-md mx-auto md:mx-0">
             <div className="rounded-xl bg-hippoBlue px-4 py-3 shadow-soft">
-              🛏️ My doctor is Dr. Smith
+              🛏️ Your doctor is Dr. Smith
             </div>
             <div className="rounded-xl bg-hippoBlue px-4 py-3 shadow-soft">
-              📅 My next appointment: 13 Nov, 10:30
+              📅 Your next appointment: 13 Nov, 10:30
             </div>
             <div className="rounded-xl bg-hippoBlue px-4 py-3 shadow-soft">
-              💊 My medication: Paracetamol 4x a day for 5 days
+              💊 Your medication: Paracetamol 4x a day for 5 days
             </div>
           </div>
         </div>

@@ -42,17 +42,19 @@ export default function MyVisit() {
           {cards.map((x) => (
             <article
               key={x.t}
-              className={`flex items-center gap-4 rounded-2xl bg-page border-8 ${x.borderColor} p-5 shadow-soft`}
+              className={`my-visit-card flex flex-col items-center gap-4 rounded-2xl bg-page border-8 ${x.borderColor} p-5 shadow-soft md:flex-row`}
             >
               {/* Image */}
               <img
                 src={x.img}
                 alt={x.t}
-                className="w-40 h-40 object-contain flex-shrink-0 p-2"
+                // Mobile: full width, auto height, constrained by max-w-40 center
+                // Tablet/Desktop (sm+): set back to w-40 h-40
+                className="w-full max-w-40 h-auto object-contain mx-auto p-2 md:w-40 md:h-40"
               />
 
               {/* Text */}
-              <div>
+              <div className="w-full">
                 <h3 className="text-xl font-semibold text-ink">{x.t}</h3>
                 <p className="mt-2 text-ink/70">{x.c}</p>
               </div>
