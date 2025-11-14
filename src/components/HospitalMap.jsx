@@ -13,7 +13,7 @@ export default function HospitalMap() {
           </div>
           <div className="rounded-2xl border min-h-72 grid place-items-center bg-white">
             {/* Replace with actual map / image */}
-            <img src="/map-placeholder.png" alt="Hospital map" className="max-h-72 object-contain" />
+            <img src="./images/map.png" alt="Hospital map" className="max-h-72 object-contain" />
           </div>
         </div>
       </div>
