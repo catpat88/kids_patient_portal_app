@@ -1,18 +1,17 @@
+import { Map } from "lucide-react";
+
 export default function HospitalMap() {
   return (
     <section id="map" className="scroll-mt-24 py-10">
-      <div className="rounded-3xl bg-gray-50 p-6 md:p-8 border">
-        <h2 className="text-center text-sm tracking-widest text-ink/70">My Hospital Map</h2>
-        <div className="mt-4 grid gap-4 md:grid-cols-[1fr,2fr]">
-          <div className="space-y-3">
-            <button className="w-full h-10 rounded-xl border bg-white">Children’s Ward</button>
-            <button className="w-full h-10 rounded-xl border bg-white">MRI</button>
-            <button className="w-full h-10 rounded-xl border bg-white">Canteen</button>
-            <button className="w-full h-10 rounded-xl border bg-white">X-Ray</button>
-            <button className="w-full h-10 rounded-xl border bg-white">Playroom</button>
-          </div>
-          <div className="rounded-2xl border min-h-72 grid place-items-center bg-white">
-            {/* Replace with actual map / image */}
+      {/* Header with icon */}
+      <div className="rounded-3xl bg-card p-6 md:p-8">
+        <div className="flex flex-row gap-2 py-3">
+        <Map className="w-6 h-6 text-ink"/>
+        <h2 className="text-lg font-semibold text-ink">My Hospital Map</h2>
+        </div>
+        <div className="">
+          <div className="rounded-2xl min-h-72 bg-card grid place-items-center">
+            {/*map / image */}
             <img src="./images/map.png" alt="Hospital map" className="max-h-72 object-contain" />
           </div>
         </div>

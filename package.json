@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "mysql": "^2.18.1",
+=======
+    "lucide-react": "^0.553.0",
+>>>>>>> a14cee9df8fce42a2f9028207d3cd8d56f8f3336
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.5"

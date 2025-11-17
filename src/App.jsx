@@ -32,7 +32,7 @@ function Home() {
       {/* Back-to-top bubble */}
       <a
         href="#top"
-        className="fixed bottom-6 right-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-sky-600 text-white shadow-soft"
+        className="fixed bottom-6 right-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-hippoBlue text-ink shadow-soft text-2xl"
         aria-label="Back to top"
       >
         ↑

@@ -1,4 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
+import tailwindConfig from "../../tailwind.config";
+
+
 
 export default function Login() {
   const navigate = useNavigate();
@@ -8,23 +11,24 @@ export default function Login() {
       {/* Header / logo */}
       <header className="py-6">
         <img
-          src="/images/logo-hippo-hub.svg"  // put your logo in public/images/
+          src="public/images/healthy-hippo-logo.png"
           alt="Healthy Hippo Hub"
-          className="mx-auto h-10 md:h-12"
+          className="mx-auto h-20 md:h-25"
         />
+      <div className="h-px w-full bg-gray-300"></div>
       </header>
 
       {/* Content */}
-      <main className="mx-auto max-w-6xl px-4 pb-24 w-full">
+      <main className="mx-auto max-w-6xl px-4 pb-24 pt-10 w-full">
         {/* Layout: form + mascot image */}
         <div className="grid md:grid-cols-2 items-center gap-12 md:gap-16">
           {/* Mascot */}
           <div className="order-2 md:order-1 flex justify-center">
-            <div className="rounded-full bg-mintGreen/30 aspect-square grid place-items-center shadow-soft overflow-hidden w-56 h-56 md:w-72 md:h-72">
+            <div className=" grid place-items-center overflow-hidden w-80 h-80 md:w-90 md:h-90">
               <img
-                src="/images/hippo-doctor.png"  // put image in public/images/
+                src="public/images/heroIMG.png"  
                 alt="Hippo doctor mascot"
-                className="w-44 h-44 md:w-56 md:h-56 object-contain"
+                className="w-80 h-80 md:w-90 md:h-90 object-contain"
               />
             </div>
           </div>

@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="mt-12 border-t">
+    <footer className="mt-12 bg-hippoBlue">
       <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 md:grid-cols-3">
         <div>
-          <img src="/logo-hippo.png" alt="Healthy Hippo" className="h-12 mb-2" />
+          <img src="public/images/healthy-hippo-logo.png" alt="Healthy Hippo Logo" className="h-30 mb-2" />
           <div className="text-sm text-ink/70">© {new Date().getFullYear()} Healthy Hippo Hub</div>
         </div>
 
