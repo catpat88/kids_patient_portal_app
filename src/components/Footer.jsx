@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="text-sm">
           <div className="font-semibold">Contact / Help</div>
           <div className="mt-2">Reception: 07775 5278 232</div>
-          <div>Email: contact@healthyhippo.ex</div>
+          <div>Email: contact@healthyishhippo.ex</div>
         </div>
       </div>
     </footer>
