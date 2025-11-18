@@ -31,7 +31,7 @@ export default function Videos() {
             <span className="text-sm">Play Time</span>
             </button>
             {/* Button 4 */}
-            <button className="h-30 w-30 m-4 rounded-full bg-lilac shadow-soft flex flex-col justify-self-center items-center justify-center">
+            <button className="h-30 w-30 m-4 rounded-full bg-lilac shadow-soft hover:-translate-y-0.5 flex flex-col justify-self-center items-center justify-center">
             <Star className="w-8 h-8" />
             <span className="text-sm">Fun Activities</span>
             </button>

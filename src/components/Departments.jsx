@@ -13,10 +13,10 @@ export default function Departments() {
   return (
     <section id="departments" className="scroll-mt-37 py-12 px-6 lg:px-16 rounded-3xl bg-card xl:scroll-mt-3">
       <div className="flex items-center">
-       <Stethoscope className="w-6 h-6 text-ink pr-10"/>
+       <Stethoscope className="w-6 h-6 text-ink mr-2"/>
       <h2 className="text-lg font-semibold">Departments</h2>
       </div>
-      <div>
+      <div className="mt-5 mb-10">
         <p className="mt-2 text-ink/70 max-w-2xl">
         Our hospital is made up of many departments. Find out about them here!
       </p>
