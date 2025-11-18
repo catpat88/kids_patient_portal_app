@@ -1,3 +1,5 @@
+import {Stethoscope} from "lucide-react";
+
 const depts = [
   { name: "Surgery", blurb: "How surgery works & who helps you." },
   { name: "MRI/Scan", blurb: "What a scan is like and what to expect." },
@@ -9,11 +11,16 @@ const depts = [
 
 export default function Departments() {
   return (
-    <section id="departments" className="scroll-mt-24 py-10">
+    <section id="departments" className="scroll-mt-37 py-12 px-6 lg:px-16 rounded-3xl bg-card xl:scroll-mt-3">
+      <div className="flex items-center">
+       <Stethoscope className="w-6 h-6 text-ink mr-2"/>
       <h2 className="text-lg font-semibold">Departments</h2>
-      <p className="mt-2 text-ink/70 max-w-2xl">
+      </div>
+      <div className="mt-5 mb-10">
+        <p className="mt-2 text-ink/70 max-w-2xl">
         Our hospital is made up of many departments. Find out about them here!
       </p>
+      </div>
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
         {depts.map((d) => (
           <article key={d.name} className="rounded-2xl border p-5 bg-white hover:shadow-soft">
