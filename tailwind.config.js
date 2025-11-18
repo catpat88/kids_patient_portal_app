@@ -9,15 +9,15 @@ export default {
     extend: {
       colors: {
         // 🌈 Brand Core
-        hippoBlue: "#9BE7FF",      // light friendly blue
-        mintGreen: "#BDF6D4",      // for health / calm
-        peach: "#FFB3AB",          // warm accent
-        lilac: "#CDB4FF",          // soft purple
-        sunnyYellow: "#FFE97A",    // happy yellow
-        coralPink: "#FFD6E8",      // friendly pink
+        hippoBlue: "#9BE7FF",      
+        mintGreen: "#BDF6D4",     
+        peach: "#FFB3AB",          
+        lilac: "#CDB4FF",          
+        sunnyYellow: "#FFE97A",    
+        coralPink: "#FFD6E8",      
 
         // 🌤 Backgrounds
-        page: "#ffffff",
+        page: "#ffffffff",
         card: "#F8F8F8",
         graySoft: "#f6f7f8",
         grayLine: "#e5e7eb",
