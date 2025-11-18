@@ -1,6 +1,6 @@
 export default function Quiz() {
   return (
-    <section id="quiz" className="scroll-mt-24 py-10">
+    <section id="quiz" className="scroll-mt-28 xl:scroll-mt-0 py-10">
       <div className="rounded-3xl bg-gray-50 p-6 md:p-8">
         <h2 className="text-lg font-semibold">Quiz</h2>
 
