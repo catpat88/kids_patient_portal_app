@@ -9,7 +9,7 @@ export default function GamesList() {
       title: "Tic Tac Toe", 
       description: "Classic strategy game for two players.",
       icon: <Puzzle className="w-8 h-8 text-ink" />,
-      color: "bg-mintGreen", // approximating 'mintGreen'
+      color: "bg-mintGreen", 
       link: "https://playtictactoe.org/"
     },
     { 
@@ -17,7 +17,7 @@ export default function GamesList() {
       title: "Snake Eater", 
       description: "Navigate the grid and grow without hitting walls.",
       icon: <Ghost className="w-8 h-8 text-ink" />,
-      color: "bg-sunnyYellow", // approximating 'sunnyYellow'
+      color: "bg-sunnyYellow", 
       link: "https://playsnake.org/"
     },
     { 
@@ -25,7 +25,7 @@ export default function GamesList() {
       title: "Space Invaders", 
       description: "Defend Earth from waves of alien invaders.",
       icon: <Gamepad2 className="w-8 h-8 text-ink" />,
-      color: "bg-peach", // approximating 'peach'
+      color: "bg-peach", 
       link: "https://freeinvaders.org/"
     }
   ];
