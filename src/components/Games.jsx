@@ -32,7 +32,6 @@ export default function GamesList() {
 
   return (
     <section id="games" className="scroll-mt-24 py-10 -mt-6 xl:scroll-mt-3">
-    <section id="games" className="scroll-mt-24 py-10">
       <div className="rounded-3xl bg-card p-6 md:p-8">
         
         {/* HEADER */}
