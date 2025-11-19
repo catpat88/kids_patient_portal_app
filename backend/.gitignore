@@ -1,0 +1,5 @@
+# Ignore the real database connection file
+db_connect.php
+
+# Ignore any local development files
+.DS_Store
