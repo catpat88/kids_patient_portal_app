@@ -1,11 +1,17 @@
+import { Star } from "lucide-react";
+
 export default function Quiz() {
   return (
-    <section id="quiz" className="scroll-mt-24 py-10">
+    <section id="quiz" className="scroll-mt-28 xl:scroll-mt-0 py-10">
       <div className="rounded-3xl bg-gray-50 p-6 md:p-8">
+        <div className="flex items-center gap-2 mb-6 ">
+        <Star className="w-6 h-6 text-ink" />
         <h2 className="text-lg font-semibold">Quiz</h2>
+        </div>
+         
 
-        <div className="mt-4 grid gap-6 md:grid-cols-[260px,1fr]">
-          <div className="space-y-3">
+        <div className="mt-4 flex flex-col gap-8 md:flex-row">
+          <div className="space-y-3 w-full md:w-1/2">
             <div className="text-sm text-ink/70">Quiz Question 1:</div>
             <div className="font-medium">Who is the first doctor who listens to your heartbeat?</div>
 
@@ -20,7 +26,7 @@ export default function Quiz() {
             <button className="mt-3 h-10 rounded-xl bg-sky-600 text-white px-4">Submit</button>
           </div>
 
-          <div className="rounded-2xl min-h-64 grid place-items-center bg-white">
+          <div className="rounded-2xl min-h-64 grid place-items-center bg-white w-full md:w-1/2">
             {/* Replace with illustration/video/image */}
             <span className="text-ink/60">Quiz Illustration</span>
           </div>

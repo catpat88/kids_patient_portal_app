@@ -36,7 +36,7 @@ export default function NavBar() {
   ];
 
   return (
-    <header id="top" className="sticky top-0 z-20 bg-white">
+    <header id="top" className="sticky xl:static top-0 z-20 bg-white">
       <nav className="mx-auto max-w-6xl px-4 h-34 flex items-center gap-2">
         <div className="flex flex-col justify-center">
           <img src="/images/healthy-hippo-logo.png" alt="Healthy Hippo Hub logo" className="h-20 lg:h-24 object-contain" />
