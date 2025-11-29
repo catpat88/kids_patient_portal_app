@@ -4,7 +4,7 @@ import {Video } from "lucide-react";
 export default function Videos() {
   return (
     // container, heading & icon//
-    <section id="videos" className="scroll-mt-24 py-10">
+    <section id="videos" className="C">
       <div className="rounded-3xl bg-card p-6 md:p-8">
         <div className="flex flex-row gap-2 py-3">
           <Video className="w-6 h-6 text-ink" />

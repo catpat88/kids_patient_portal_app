@@ -1,5 +1,7 @@
 import React from 'react';
 import { Gamepad2, Ghost, Puzzle, Play } from 'lucide-react';
+import { FontAwesomeIcon } from 'fortawesome/react-fontawesome';
+import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons';
 
 export default function GamesList() {
   // 1. DATA
@@ -16,7 +18,7 @@ export default function GamesList() {
       id: 2, 
       title: "Snake Eater", 
       description: "Navigate the grid and grow without hitting walls.",
-      icon: <Ghost className="w-8 h-8 text-yellow-700" />,
+      icon: <snake className="w-8 h-8 text-yellow-700" />,
       color: "bg-yellow-200", // approximating 'sunnyYellow'
       link: "https://playsnake.org/"
     },
@@ -24,7 +26,7 @@ export default function GamesList() {
       id: 3, 
       title: "Space Invaders", 
       description: "Defend Earth from waves of alien invaders.",
-      icon: <Gamepad2 className="w-8 h-8 text-orange-700" />,
+      icon: <snake className="w-8 h-8 text-orange-700" />,
       color: "bg-orange-200", // approximating 'peach'
       link: "https://freeinvaders.org/"
     }

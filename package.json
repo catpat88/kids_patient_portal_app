@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "'": "file:awesome.me/kit-KIT_CODE/icons'",
     "mysql": "^2.18.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.5"
+    "react-router-dom": "^7.9.5",
+    "save": "^2.9.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
