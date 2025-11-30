@@ -1,7 +1,23 @@
 import React from 'react';
-import { Gamepad2, Ghost, Puzzle, Play } from 'lucide-react';
-// import { FontAwesomeIcon } from 'fortawesome/react-fontawesome';
-// import { faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { Gamepad2, Puzzle, Play } from 'lucide-react';
+
+// Custom Snake Icon Component to match Lucide style
+const SnakeIcon = ({ className }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M2 13.5h2a2.5 2.5 0 0 0 2.5-2.5v-1a2.5 2.5 0 0 1 2.5-2.5h2a2.5 2.5 0 0 1 2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h2" />
+    <circle cx="19" cy="13.5" r="2" />
+    <path d="M21 13.5h1" />
+  </svg>
+);
 
 export default function GamesList() {
   // 1. DATA
@@ -10,40 +26,41 @@ export default function GamesList() {
       id: 1, 
       title: "Tic Tac Toe", 
       description: "Classic strategy game for two players.",
-      icon: <Puzzle className="w-8 h-8 text-ink" />,
-      color: "bg-mintGreen", 
+      icon: <Puzzle className="w-8 h-8 text-emerald-700" />,
+      color: "bg-emerald-200", 
       link: "https://playtictactoe.org/"
     },
     { 
       id: 2, 
       title: "Snake Eater", 
       description: "Navigate the grid and grow without hitting walls.",
-      icon: <snake className="w-8 h-8 text-yellow-700" />,
-      color: "bg-yellow-200", // approximating 'sunnyYellow'
+      // Updated to use the custom SnakeIcon
+      icon: <SnakeIcon className="w-8 h-8 text-yellow-700" />,
+      color: "bg-yellow-200", 
       link: "https://playsnake.org/"
     },
     { 
       id: 3, 
       title: "Space Invaders", 
       description: "Defend Earth from waves of alien invaders.",
-      icon: <snake className="w-8 h-8 text-orange-700" />,
-      color: "bg-orange-200", // approximating 'peach'
+      icon: <Gamepad2 className="w-8 h-8 text-orange-700" />,
+      color: "bg-orange-200", 
       link: "https://freeinvaders.org/"
     }
   ];
 
   return (
-    <section id="games" className="scroll-mt-24 py-10 -mt-6 xl:scroll-mt-3">
-      <div className="rounded-3xl bg-card p-6 md:p-8">
+    <section id="games" className="scroll-mt-24 py-10 bg-gray-50 min-h-screen flex justify-center">
+      <div className="w-full max-w-5xl rounded-3xl bg-white shadow-xl p-6 md:p-8 border border-gray-100 h-fit">
         
         {/* HEADER */}
         <div className="flex flex-row gap-2 py-3 items-center">
-          <Gamepad2 className="w-6 h-6 text-ink" />
-          <h2 className="text-lg font-semibold text-ink">Games</h2>
+          <Gamepad2 className="w-6 h-6 text-gray-800" />
+          <h2 className="text-lg font-semibold text-gray-800">Games</h2>
         </div>
-        <h3 className="text-sm py-3 text-ink">Choose a game to play:</h3>
+        <h3 className="text-sm py-3 text-gray-500">Choose a game to play:</h3>
 
-        {/* SINGLE ROW LAYOUT - Updated to grid-cols-3 for even spacing */}
+        {/* SINGLE ROW LAYOUT */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
            {games.map((game) => (
              <a 
@@ -65,10 +82,10 @@ export default function GamesList() {
                
                {/* Text Content */}
                <div className="text-center">
-                  <span className="block text-sm font-bold text-ink uppercase tracking-wide mb-1">
+                  <span className="block text-sm font-bold text-gray-800 uppercase tracking-wide mb-1">
                     {game.title}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-ink group-hover:text-gray-900">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-gray-600 group-hover:text-gray-900">
                     Play Now <Play className="w-3 h-3 fill-current" />
                   </span>
                </div>
