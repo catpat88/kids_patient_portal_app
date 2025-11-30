@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Map, Video, Stethoscope, Gamepad2, Star, Syringe, BriefcaseMedical } from "lucide-react";
 
-// 1. Define the video data outside the component
+// Define the video data outside the component
 const videoData = [
   {
     id: "hospital-tour",
@@ -35,19 +35,19 @@ const videoData = [
 
 
 export default function Videos() {
-    // 2. Use useState to track the currently selected video
-    // Initialize with the videoId of the first item, or null/'' for no video initially
-    const [currentVideoId, setCurrentVideoId] = useState(videoData[0].videoId);
-    const [currentVideoTitle, setCurrentVideoTitle] = useState(videoData[0].title);
+    // Use useState to track the currently selected video
+    // Initialize with null or empty string
+    const [currentVideoId, setCurrentVideoId] = useState(null); 
+    const [currentVideoTitle, setCurrentVideoTitle] = useState(null);
 
 
-    // 3. Handler function to update the state when a button is clicked
+    // Handler function to update the state when a button is clicked
     const handleButtonClick = (videoId, title) => {
         setCurrentVideoId(videoId);
         setCurrentVideoTitle(title);
     };
 
-    // 4. Function to generate the YouTube embed URL
+    // Function to generate the YouTube embed URL
     const getEmbedUrl = (videoId) => {
         // The 'autoplay=1' parameter starts the video automatically when the state changes
         return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
@@ -92,7 +92,7 @@ export default function Videos() {
                         })}
                     </div>
                     
-                    {/* 6. Video Player display */}
+                    {/* Video Player display */}
                     <div className="rounded-2xl w-full lg:w-2/3 aspect-video bg-black/5 grid place-items-center overflow-hidden">
                         {currentVideoId ? (
                             <iframe

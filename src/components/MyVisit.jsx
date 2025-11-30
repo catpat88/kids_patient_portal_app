@@ -5,25 +5,25 @@ const cards = [
     t: "Where am I going?",
     c: "This is the children’s wing of the hospital. You are safe here, and nurses and doctors will help you feel better.",
     borderColor: "border-sunnyYellow",
-    img: "/images/imagesMain/hospital.png",
+    img: "/images/hospital.png",
   },
   {
     t: "What can I do while I wait?",
     c: "You can play with toys, draw pictures, or watch a short cartoon until it’s your turn.",
     borderColor: "border-mintGreen",
-    img: "/images/imagesMain/childtoybox.png",
+    img: "/images/childtoybox.png",
   },
   {
     t: "Who I will see?",
     c: "Today you might meet a nurse, doctor, or play worker. They will tell you what will happen.",
     borderColor: "border-coralPink",
-    img: "/images/imagesMain/hospitalstaff.png",
+    img: "/images/hospitalstaff.png",
   },
   {
     t: "Taking Medicine",
     c: "Medicine helps your body get better. Some medicine is a drink, some is a tablet, and sometimes it is given through a tiny straw in your arm.",
     borderColor: "border-lilac",
-    img: "/images/imagesMain/medication.png",
+    img: "/images/medication.png",
   },
 ];
 
