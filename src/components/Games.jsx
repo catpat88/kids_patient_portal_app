@@ -1,7 +1,7 @@
 import React from 'react';
 import { Gamepad2, Ghost, Puzzle, Play } from 'lucide-react';
-import { FontAwesomeIcon } from 'fortawesome/react-fontawesome';
-import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons';
+// import { FontAwesomeIcon } from 'fortawesome/react-fontawesome';
+// import { faGamepad } from '@fortawesome/free-solid-svg-icons';
 
 export default function GamesList() {
   // 1. DATA
