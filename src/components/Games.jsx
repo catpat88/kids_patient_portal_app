@@ -50,8 +50,8 @@ export default function GamesList() {
   ];
 
   return (
-    <section id="games" className="scroll-mt-24 py-10 bg-gray-50 min-h-screen flex justify-center">
-      <div className="w-full max-w-5xl rounded-3xl bg-white shadow-xl p-6 md:p-8 border border-gray-100 h-fit">
+    <section id="games" className="scroll-mt-28 mb-10 rounded-3xl py-10 bg-gray-50 min-h-screen flex justify-center">
+      <div className="w-full max-w-5xl rounded-3xl bg-gray-50 shadow-xl p-6 md:p-8 order-gray-100 h-fit">
         
         {/* HEADER */}
         <div className="flex flex-row gap-2 py-3 items-center">
