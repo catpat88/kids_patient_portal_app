@@ -58,48 +58,48 @@ const depts = [
   { 
     name: "Surgery", 
     blurb: "Surgery is when doctors help fix something inside your body. You are given a special sleep, and when you wake up, the doctors and your family are there.",
-    color: "bg-pink-50",
-    borderColor: "border-pink-300",
+    color: "bg-page",
+    borderColor: "border-coralPink",
     image: ImageSurgery,
     title: "Surgery"
   },
   { 
     name: "MRI Scan", 
     blurb: "Just like an X-Ray, an MRI gives us a 3D picture of your body. This lets us look at your bones and muscles as a map to help us work out how to help you.",
-    color: "bg-blue-50",
-    borderColor: "border-blue-300",
+    color:"bg-page",
+    borderColor: "border-hippoBlue",
     image: ImageMRIScan,
     title: "MRI Scan"
   },
   { 
     name: "Clinics", 
     blurb: "In our hospital, we have many clinics. Here you will meet your doctor regularly to make sure you are in tip top shape.",
-    color: "bg-purple-50",
-    borderColor: "border-purple-300",
+    color: "bg-page",
+    borderColor: "border-lilac",
     image: ImageClinics,
     title: "Clinics"
   },
   { 
     name: "Wards", 
     blurb: "A ward is a big, open bedroom that you share with other people when you stay in hospital. Like a big sleepover!",
-    color: "bg-green-50",
-    borderColor: "border-green-300",
+    color: "bg-page",
+    borderColor: "border-mintGreen",
     image: ImageWards,
     title: "Wards"
   },
   { 
     name: "Getting an X-Ray", 
     blurb: "An X-ray is a special camera that takes a picture of your bones. You have to sit still while the picture is taken. It doesn't hurt.",
-    color: "bg-red-50",
-    borderColor: "border-red-300",
+    borderColor: "border-peach",
+    color: "bg-page",
     image: ImageXRay,
     title: "Getting an X-Ray"
   },
   { 
     name: "Play Areas", 
     blurb: "We have a cool play room right in our hospital! Simply turn left from our front door, into a magical land.",
-    color: "bg-yellow-50",
-    borderColor: "border-yellow-300",
+    color: "bg-page",
+    borderColor: "border-sunnyYellow",
     image: ImagePlayAreas,
     title: "Play Areas"
   },
@@ -132,7 +132,7 @@ export default function Departments() {
       {/* --- Departments Grid --- */}
       {/* Grid is set to 2 columns on medium screens and up to match the side-by-side design */}
 
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 bg-card">
         {depts.map((d) => {
           const ImageComponent = d.image; 
           
@@ -143,7 +143,7 @@ export default function Departments() {
                 rounded-3xl shadow-soft transition 
                 ${d.color} 
                 hover:shadow-lg 
-                border-4 
+                border-7 
                 ${d.borderColor} 
                 relative 
                 overflow-hidden
