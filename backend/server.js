@@ -1,17 +1,19 @@
-// server.js
+// server.js (ES module version)
 
-const express = require("express");
-const mysql = require("mysql2");
-const cors = require("cors");
-require("dotenv").config(); // loads variables from .env
+import express from "express";
+import mysql from "mysql2";
+import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const app = express();
-app.use(cors()); // Allow browser apps from other ports to use our API
-app.use(express.json()); // For reading JSON in POST requests
+app.use(cors());
+app.use(express.json());
 
-// Create a connection pool (safe and fast)
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT, // ✅ add this line
+  port: process.env.DB_PORT,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
@@ -24,11 +26,9 @@ app.get("/", (req, res) => {
   pool.query("SELECT * FROM patients", (err, results) => {
     if (err) {
       console.error("Database error:", err);
-
       return res.status(500).json({ error: "Database error" });
     }
-
-    res.json(results); // send the list of patients as JSON
+    res.json(results);
   });
 });
 
@@ -41,15 +41,16 @@ pool.getConnection((err, connection) => {
   }
 });
 
-// LOGIN route
 app.post("/api/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const [rows] = await pool.query(
-      "SELECT * FROM patients WHERE username = ? AND password = ?",
-      [username, password]
-    );
+    const [rows] = await pool
+      .promise()
+      .query("SELECT * FROM patients WHERE username = ? AND password = ?", [
+        username,
+        password,
+      ]);
 
     if (rows.length > 0) {
       res.json({
@@ -65,8 +66,5 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-// Start the server
-
 const port = process.env.PORT || 4000;
-
 app.listen(port, () => console.log(`Server is running on port ${port}`));
