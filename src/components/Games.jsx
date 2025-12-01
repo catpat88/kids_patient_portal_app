@@ -26,8 +26,8 @@ export default function GamesList() {
       id: 1, 
       title: "Tic Tac Toe", 
       description: "Classic strategy game for two players.",
-      icon: <Puzzle className="w-8 h-8 text-emerald-700" />,
-      color: "bg-emerald-200", 
+      icon: <Puzzle className="w-8 h-8 text-ink" />,
+      color: "bg-mintGreen", 
       link: "https://playtictactoe.org/"
     },
     { 
@@ -35,30 +35,30 @@ export default function GamesList() {
       title: "Snake Eater", 
       description: "Navigate the grid and grow without hitting walls.",
       // Updated to use the custom SnakeIcon
-      icon: <SnakeIcon className="w-8 h-8 text-yellow-700" />,
-      color: "bg-yellow-200", 
+      icon: <SnakeIcon className="w-8 h-8 text-ink" />,
+      color: "bg-sunnyYellow", 
       link: "https://playsnake.org/"
     },
     { 
       id: 3, 
       title: "Space Invaders", 
       description: "Defend Earth from waves of alien invaders.",
-      icon: <Gamepad2 className="w-8 h-8 text-orange-700" />,
-      color: "bg-orange-200", 
+      icon: <Gamepad2 className="w-8 h-8 text-ink" />,
+      color: "bg-peach", 
       link: "https://freeinvaders.org/"
     }
   ];
 
   return (
-    <section id="games" className="scroll-mt-28 mb-10 rounded-3xl py-10 bg-gray-50 min-h-screen flex justify-center">
-      <div className="w-full max-w-5xl rounded-3xl bg-gray-50 shadow-xl p-6 md:p-8 order-gray-100 h-fit">
+    <section id="games" className="scroll-mt-28 mb-5 rounded-3xl py-5 bg-card flex justify-center">
+      <div className="w-full max-w-5xl rounded-3xl order-card h-fit ">
         
         {/* HEADER */}
         <div className="flex flex-row gap-2 py-3 items-center">
           <Gamepad2 className="w-6 h-6 text-gray-800" />
           <h2 className="text-lg font-semibold text-gray-800">Games</h2>
         </div>
-        <h3 className="text-sm py-3 text-gray-500">Choose a game to play:</h3>
+        <h3 className="text-sm py-3 text-ink">Choose a game to play:</h3>
 
         {/* SINGLE ROW LAYOUT */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
