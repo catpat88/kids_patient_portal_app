@@ -123,7 +123,7 @@ export default function Departments() {
       {/* --- Section Heading --- */}
       <div className="flex items-center mb-6">
         <Stethoscope className="w-6 h-6 text-ink mr-2"/>
-        <h2 className="text-xl font-bold text-ink">Departments</h2>
+        <h2 className="text-lg py-5 font-bold text-ink">Departments</h2>
       </div>
 
       {/* --- Hippo Header/Dialogue --- */}
