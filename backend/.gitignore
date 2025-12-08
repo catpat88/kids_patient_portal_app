@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-# # Ignore the real database connection file
-# .env
+# Ignore the real database connection file
+.env
 
-# # Ignore any local development files
-# .env
-=======
-#
->>>>>>> f5a109df7dc30408d2dfc1aeb580dd407c603745
+# Ignore any local development files
+.env
