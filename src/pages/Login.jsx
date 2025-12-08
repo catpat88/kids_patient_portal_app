@@ -45,7 +45,7 @@ export default function Login() {
                   type="text"
                   placeholder="Patient ID"
                   className="w-full rounded-xl bg-graySoft border border-grayLine px-4 py-3 outline-none focus:ring-2 focus:ring-hippoBlue"
-                  value={username}
+                  // value={username}
                 />
               </label>
 
@@ -55,7 +55,7 @@ export default function Login() {
                   type="password"
                   placeholder="Password"
                   className="w-full rounded-xl bg-graySoft border border-grayLine px-4 py-3 outline-none focus:ring-2 focus:ring-hippoBlue"
-                  value={password}
+                  // value={password}
                 />
               </label>
 
