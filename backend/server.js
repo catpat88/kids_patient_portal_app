@@ -47,7 +47,7 @@ app.post("/api/login", async (req, res) => {
   try {
     const [rows] = await pool
       .promise()
-      .query("SELECT * FROM patients WHERE username = ? AND password = ?", [
+      .query("SELECT * FROM patients WHERE patient_id = ? AND password = ?", [
         username,
         password,
       ]);
