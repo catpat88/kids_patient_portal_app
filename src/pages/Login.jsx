@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import tailwindConfig from "../../tailwind.config";
-
-
+import { useState } from "react";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ export default function Login() {
           alt="Healthy Hippo Hub"
           className="mx-auto h-20 md:h-25"
         />
-      <div className="h-px w-full bg-gray-300"></div>
+        <div className="h-px w-full bg-gray-300"></div>
       </header>
 
       {/* Content */}
@@ -26,7 +25,7 @@ export default function Login() {
           <div className="order-2 md:order-1 flex justify-center">
             <div className=" grid place-items-center overflow-hidden w-80 h-80 md:w-90 md:h-90">
               <img
-                src="public/images/heroIMG.png"  
+                src="public/images/heroIMG.png"
                 alt="Hippo doctor mascot"
                 className="w-80 h-80 md:w-90 md:h-90 object-contain"
               />
@@ -46,6 +45,7 @@ export default function Login() {
                   type="text"
                   placeholder="Patient ID"
                   className="w-full rounded-xl bg-graySoft border border-grayLine px-4 py-3 outline-none focus:ring-2 focus:ring-hippoBlue"
+                  // value={username}
                 />
               </label>
 
@@ -55,6 +55,7 @@ export default function Login() {
                   type="password"
                   placeholder="Password"
                   className="w-full rounded-xl bg-graySoft border border-grayLine px-4 py-3 outline-none focus:ring-2 focus:ring-hippoBlue"
+                  // value={password}
                 />
               </label>
 
@@ -78,7 +79,8 @@ export default function Login() {
 
               {/* Helper text only (no backend) */}
               <p className="text-xs text-inkLight/80">
-                This is a preview of the login UI. Authentication hasn’t been connected yet.
+                This is a preview of the login UI. Authentication hasn’t been
+                connected yet.
               </p>
             </div>
           </div>
