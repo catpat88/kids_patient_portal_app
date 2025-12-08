@@ -4,7 +4,7 @@ import { Stethoscope } from "lucide-react";
 // Image components
 const ImageSurgery = () => (
   <img 
-        src="/images/departments-surgery.png"
+        src="/images/departments-surgery.png "
         alt="cartoon image of a group of healhcare professionals" 
         className="w-full h-auto object-cover max-w-sm md:max-w-md"
     />
