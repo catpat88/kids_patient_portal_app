@@ -1,5 +1,1 @@
-# Ignore the real database connection file
-.env
-
-# Ignore any local development files
-.env
+#
