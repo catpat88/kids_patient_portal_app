@@ -22,8 +22,14 @@ export default function Login({ setIsloggedIn }) {
         navigate("/"); // redirect to home
       }
     } catch (err) {
-      if (err.response && err.response.status === 401) {
+      console.error("Login request failed:", err);
+      if (err?.response?.status === 401) {
         setError("Invalid credentials. Please try again.");
+      } else if (
+        err.code === "ECONNREFUSED" ||
+        err.message?.includes("Network Error")
+      ) {
+        setError("Cannot reach authentication server. Is the backend running?");
       } else {
         setError("Server error. Please try later.");
       }

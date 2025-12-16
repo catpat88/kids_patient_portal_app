@@ -1,5 +1,6 @@
 // App.jsx
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 import MainLayout from "./components/MainLayout.jsx";
 import Login from "./pages/Login.jsx";
@@ -27,6 +28,7 @@ function Home() {
 }
 
 export default function App() {
+  const [isLoggedIn, setIsloggedIn] = useState(false);
   return (
     <Routes>
 
@@ -36,7 +38,10 @@ export default function App() {
       </Route>
 
       {/* Login page WITHOUT navbar/footer */}
-      <Route path="/login" element={<Login />} />
+      <Route
+        path="/login"
+        element={<Login setIsloggedIn={setIsloggedIn} />}
+      />
     </Routes>
   );
 }
