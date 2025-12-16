@@ -31,17 +31,13 @@ export default function App() {
   const [isLoggedIn, setIsloggedIn] = useState(false);
   return (
     <Routes>
-
       {/* Everything inside MainLayout has NavBar + Footer */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
       </Route>
 
       {/* Login page WITHOUT navbar/footer */}
-      <Route
-        path="/login"
-        element={<Login setIsloggedIn={setIsloggedIn} />}
-      />
+      <Route path="/login" element={<Login setIsloggedIn={setIsloggedIn} />} />
     </Routes>
   );
 }
