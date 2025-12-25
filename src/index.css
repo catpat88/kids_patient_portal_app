@@ -1,52 +1,60 @@
-/* Tailwind CSS Base */
+/* Tailwind v4 */
 @import "tailwindcss";
 
-/* 🧭 Base layer — general document setup */
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+/* === Design tokens (v4-native) === */
+@theme {
+  /* Branded colors */
+  --color-hippoBlue:   #9BE7FF;
+  --color-mintGreen:   #BDF6D4;
+  --color-peach:       #FFB3AB;
+  --color-lilac:       #CDB4FF;
+  --color-sunnyYellow: #FFE97A;
+  --color-coralPink:   #FFD6E8;
 
+  /* Backgrounds + lines */
+  --color-page:     #ffffff;
+  --color-card:     #F8F8F8;
+  --color-graySoft: #f6f7f8;
+  --color-grayLine: #e5e7eb;
+
+  /* Text */
+  --color-ink:      #1f2937;
+  --color-inkLight: #4b5563;
+
+  /* Font family */
+  --font-fredoka: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+
+  /* Optional radius & shadow */
+  --radius-xl:  1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  --shadow-soft: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* === Base === */
+@layer base {
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Fredoka', sans-serif;
-    background-color: #ffffff; /* same as bg-page */
-    color: #1f2937; /* same as text-ink */
+    background-color: var(--color-page);
+    color: var(--color-ink);
   }
 }
-/* 🎨 Utility classes (custom helpers) */
+
+/* === Utilities === */
 @layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-  .shadow-soft {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
 
-  .text-ink\/70 {
-    color: #1A2B49;
-  }
+  .text-ink\/70 { color: #1A2B49; }
 
-  /* Soft pastel backgrounds */
-  .bg-mint-50 { background-color: #e8fff4; }
+  /*- delete once changed from basic theme */
+  .bg-mint-50  { background-color: #e8fff4; }
   .bg-peach-50 { background-color: #ffece2; }
   .bg-grape-50 { background-color: #f3e8ff; }
-
-  /* Remove unwanted outlines or borders globally */
-* {
-  outline: none !important;
-  border-color: transparent !important;
 }
 
-/* Force entire page background to pure white */
-html,
-body,
-#root {
-  background-color: #ffffff !important;
-}
 
-}

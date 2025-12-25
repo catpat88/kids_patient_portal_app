@@ -1,1 +1,51 @@
 /* Add our own styles outwith tailwind basis styles */
+
+/* MEDIA QUERIES>>>> */
+/**** Target devices up to 768px wide (standard tablet/mobile breakpoint) ******/
+@media (max-width: 769px) {
+    /* Target the links inside your sticky header */
+    #top a {
+        padding: 0.5rem 0.75rem; /* Reduce padding */
+        font-size: 0.9rem;       /* Make text slightly smaller */
+    }
+    nav{
+        gap: 0.25rem;
+        justify-content: center;
+
+    }
+}
+
+/***** Target smaller phones specifically (up to 480px) *****/
+@media (max-width: 480px) {
+    .logo-container {
+        display: none;
+    }
+}
+
+
+/****** Target screens from 768px wide up to 1023px wide - small to medium tablets ******/
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+
+    .tablet-link-container {
+        /* Example: Override the gap for this specific range */
+        gap: 0.5rem !important; /* Forces a very tight 8px gap */
+    }
+
+    .tablet-link {
+        /* Example: Shrink the circle size further */
+        width: 5rem !important;
+        height: 5rem !important;
+    }
+    .tablet-nav-text {
+        font-size: 0.65rem !important; /* Smaller than text-xs (0.75rem) */
+    }
+}
+
+/* Forces the card content to stack vertically for all mobile/small tablet views */
+@media (max-width: 900px) { 
+    article.my-visit-card {
+        flex-direction: column !important;
+    }
+}
+
