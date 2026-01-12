@@ -51,7 +51,7 @@ export default function GamesList() {
 
   return (
     <section id="games" className="scroll-mt-28 mb-5 rounded-3xl py-5 bg-card flex justify-center">
-      <div className="w-full max-w-5xl rounded-3xl order-card h-fit ">
+      <div className="w-full max-w-5xl rounded-3xl order-card h-fit p-10">
         
         {/* HEADER */}
         <div className="flex flex-row gap-2 py-3 items-center">
