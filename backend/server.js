@@ -41,14 +41,17 @@ pool.getConnection((err, connection) => {
   }
 });
 
+// Login using patient_id and password
 app.post("/api/login", async (req, res) => {
-  const { username, password } = req.body;
+  // Renamed for clarity: the frontend must send { patient_id, password }
+  const { patient_id, password } = req.body;
 
   try {
+    // Query the patients table using patient_id instead of username
     const [rows] = await pool
       .promise()
       .query("SELECT * FROM patients WHERE patient_id = ? AND password = ?", [
-        username,
+        patient_id,
         password,
       ]);
 
@@ -56,13 +59,35 @@ app.post("/api/login", async (req, res) => {
       res.json({
         status: "success",
         message: "Login successful",
-        user: rows[0],
+        user: rows[0], // Contains patient_id, first_name, dob, etc.
       });
     } else {
       res.status(401).json({ status: "error", message: "Invalid credentials" });
     }
+
+    console.log("LOGIN REQUEST BODY:", req.body);
   } catch (err) {
     res.status(500).json({ status: "error", message: "Database error" });
+  }
+});
+
+// Fetch patient_info by patient_id
+app.get("/api/patient-info/:id", async (req, res) => {
+  const patientId = req.params.id;
+
+  try {
+    const [rows] = await pool
+      .promise()
+      .query("SELECT * FROM patient_info WHERE patient_id_fk = ?", [patientId]);
+
+    if (rows.length === 0) {
+      return res.status(404).json({ message: "No patient info found" });
+    }
+
+    res.json(rows[0]);
+  } catch (err) {
+    console.error("Database error:", err);
+    res.status(500).json({ error: "Database error" });
   }
 });
 

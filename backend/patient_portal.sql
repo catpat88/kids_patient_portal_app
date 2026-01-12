@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2025 at 09:52 PM
+-- Generation Time: Jan 12, 2026 at 06:45 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -31,7 +31,7 @@ CREATE TABLE `patients` (
   `patient_id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `patient_age` date DEFAULT NULL
+  `patient_age` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`patient_id`, `username`, `password`, `patient_age`) VALUES
-(1, 'Ainsley', 'raea', '1999-01-01');
+(1, 'Ainsley', 'raea', 25);
 
 -- --------------------------------------------------------
 

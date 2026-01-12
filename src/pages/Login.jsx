@@ -1,10 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios"; // npm install axios
+import axios from "axios";
 
-export default function Login({ setIsloggedIn }) {
+export default function Login({ setIsloggedIn, setPatient }) {
   const navigate = useNavigate();
-  const [patientID, setPatientID] = useState("");
+
+  // Renamed for consistency with backend: patient_id
+  const [patient_id, setPatientID] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -12,17 +14,21 @@ export default function Login({ setIsloggedIn }) {
     e.preventDefault();
 
     try {
+      // Send patient_id instead of username
       const res = await axios.post("http://localhost:4000/api/login", {
-        username: patientID,
+        patient_id,
         password,
       });
 
       if (res.data.status === "success") {
-        setIsloggedIn(true); // update parent state
-        navigate("/"); // redirect to home
+        localStorage.setItem("patient", JSON.stringify(res.data.user));
+        setPatient(res.data.user);
+        setIsloggedIn(true);
+        navigate("/");
       }
     } catch (err) {
       console.error("Login request failed:", err);
+
       if (err?.response?.status === 401) {
         setError("Invalid credentials. Please try again.");
       } else if (
@@ -38,7 +44,6 @@ export default function Login({ setIsloggedIn }) {
 
   return (
     <div className="min-h-screen bg-white text-ink flex flex-col">
-      {/* Header / logo */}
       <header className="py-6">
         <img
           src="/images/healthy-hippo-logo.png"
@@ -48,10 +53,8 @@ export default function Login({ setIsloggedIn }) {
         <div className="h-px w-full bg-gray-300"></div>
       </header>
 
-      {/* Content */}
       <main className="mx-auto max-w-6xl px-4 pb-24 pt-10 w-full">
         <div className="grid md:grid-cols-2 items-center gap-12 md:gap-16">
-          {/* Mascot */}
           <div className="order-2 md:order-1 flex justify-center">
             <div className="grid place-items-center overflow-hidden w-80 h-80 md:w-90 md:h-90">
               <img
@@ -62,7 +65,6 @@ export default function Login({ setIsloggedIn }) {
             </div>
           </div>
 
-          {/* Form card */}
           <form onSubmit={handleSubmit} className="order-1 md:order-2">
             <h1 className="text-center md:text-left text-2xl md:text-3xl font-bold">
               Please sign in! <span className="align-middle">✨</span>
@@ -73,7 +75,7 @@ export default function Login({ setIsloggedIn }) {
                 type="text"
                 placeholder="Patient ID"
                 className="w-full rounded-xl bg-graySoft border border-grayLine px-4 py-3 outline-none focus:ring-2 focus:ring-hippoBlue"
-                value={patientID}
+                value={patient_id}
                 onChange={(e) => setPatientID(e.target.value)}
               />
 
