@@ -27,8 +27,9 @@ export default {
         inkLight: "#4b5563",
 
         // 🧸 For older kids (future theme)
-        tealStrong: "#2BB6A7",
-        violetStrong: "#8A6FD1",
+        black: "#000000",
+        darkBlue: "#1A2B49",
+        vibrantCyan: "#03E8FF",
       },
       boxShadow: {
         soft: "0 4px 8px rgba(0,0,0,0.08)",
