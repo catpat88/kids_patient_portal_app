@@ -29,7 +29,7 @@ const cards = [
 
 export default function MyVisit() {
   return (
-    <section id="visit" className="scroll-mt-28 xl:scroll-mt-0 -mb-10 py-10">
+    <section id="visit" className="scroll-mt-27 py-10">
       <div className="rounded-3xl bg-card p-6 md:p-8">
         {/* Header with icon */}
         <div className="flex items-center gap-2 mb-6">

@@ -2,7 +2,7 @@ import { Map } from "lucide-react";
 
 export default function HospitalMap() {
   return (
-    <section id="map" className="scroll-mt-28 py-10 -mb-10 xl:scroll-mt-3">
+    <section id="map" className="scroll-mt-27 py-10 ">
       {/* Header with icon */}
       <div className="rounded-3xl bg-card p-6 md:p-8">
         <div className="flex flex-row gap-2 py-3">
