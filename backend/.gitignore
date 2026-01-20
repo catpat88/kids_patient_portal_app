@@ -1,7 +1,0 @@
-# Ignore the real database connection file
-.env
-.db_connect.php
-
-# Ignore any local development files
-.env
-.db_connect.php
