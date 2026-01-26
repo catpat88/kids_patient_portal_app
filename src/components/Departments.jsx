@@ -118,7 +118,7 @@ const HippoHeader = () => (
 export default function Departments() {
   
   return (
-    <section id="departments" className="py-8 px-6 lg:px-16 rounded-3xl bg-card">
+    <section id="departments" className="scroll-mt-36 py-7 mt-8 px-6 lg:px-12 rounded-3xl bg-card">
       
       {/* --- Section Heading --- */}
       <div className="flex items-center mb-6">

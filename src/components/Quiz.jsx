@@ -64,7 +64,7 @@ export default function Quiz() {
     const currentQ = quizData[currentQuestion];
 
     return (
-        <section id="quiz" className="scroll-mt-28 xl:scroll-mt-0 py-10">
+        <section id="quiz" className="scroll-mt-26 py-10">
             <div className="rounded-3xl bg-gray-50 p-6 md:p-8">
                 <div className="flex items-center gap-2 mb-6 ">
                     <Star className="w-6 h-6 text-ink" />

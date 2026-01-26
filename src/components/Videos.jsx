@@ -55,7 +55,7 @@ export default function Videos() {
 
     return (
         // container, heading & icon
-        <section id="videos" className="scroll-mt-28 py-10 mb-10 xl:scroll-mt-3">
+        <section id="videos" className="scroll-mt-27 py-10">
             <div className="rounded-3xl bg-card p-6 md:p-8">
                 <div className="flex flex-row gap-2 py-3">
                     <Video className="w-6 h-6 text-ink" />
