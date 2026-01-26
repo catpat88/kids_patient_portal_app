@@ -20,7 +20,7 @@ function Home({ patient, patientInfo }) {
       <MyVisit />
       <HospitalMap />
       <Videos />
-      <Games />
+      <Games patient={patient} />
       <Departments />
       <Quiz />
     </>
