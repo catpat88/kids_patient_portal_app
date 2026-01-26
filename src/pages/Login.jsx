@@ -22,17 +22,10 @@ export default function Login({ setIsloggedIn, setPatient }) {
       });
 
       if (res.data.status === "success") {
-<<<<<<< HEAD
         localStorage.setItem("patient", JSON.stringify(res.data.user));
         setPatient(res.data.user);
         setIsloggedIn(true);
         navigate("/");
-=======
-        setIsloggedIn(true); // update parent state
-                // add conditional statement for DOB here
-                // if age > navigate to teen else kids
-        navigate("/"); // redirect to home
->>>>>>> e6b517036fd633063553430afbfc01785deb1060
       }
     } catch (err) {
       console.error("Login request failed:", err);
@@ -104,12 +97,12 @@ export default function Login({ setIsloggedIn, setPatient }) {
                 >
                   Continue to portal
                 </button>
-                  <Link
-                    to="/HomePage"
-                    className="inline-block rounded-full bg-hippoBlue text-ink font-semibold px-5 py-2 shadow-soft hover:brightness-[.97] active:translate-y-[1px] transition text-center"
-                  >
-                   Back To Home Page
-                  </Link>
+                <Link
+                  to="/HomePage"
+                  className="inline-block rounded-full bg-hippoBlue text-ink font-semibold px-5 py-2 shadow-soft hover:brightness-[.97] active:translate-y-[1px] transition text-center"
+                >
+                  Back To Home Page
+                </Link>
               </div>
             </div>
           </form>
