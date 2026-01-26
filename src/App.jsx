@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import MainLayout from "./components/MainLayout.jsx";
+import HomePage from "./pages/HomePage.jsx";
 import Login from "./pages/Login.jsx";
 
 import ProfileHero from "./components/ProfileHero";
@@ -12,7 +13,7 @@ import Games from "./components/Games";
 import Departments from "./components/Departments";
 import Quiz from "./components/Quiz";
 
-function Home({ patient, patientInfo }) {
+function Portal({ patient, patientInfo }) {
   return (
     <>
       <ProfileHero patient={patient} patientInfo={patientInfo} />
@@ -51,12 +52,21 @@ export default function App() {
       .catch((err) => console.error("Failed to fetch patient info:", err));
   }, [patient]);
 
+  const handleLogout = () => {
+    localStorage.removeItem("patient");
+    setPatient(null);
+    setPatientInfo(null);
+    setIsloggedIn(false);
+  };
+
   return (
     <Routes>
-      <Route element={<MainLayout />}>
+      <Route path="/" element={<HomePage />} />
+
+      <Route element={<MainLayout onLogout={handleLogout} />}>
         <Route
-          path="/"
-          element={<Home patient={patient} patientInfo={patientInfo} />}
+          path="/portal"
+          element={<Portal patient={patient} patientInfo={patientInfo} />}
         />
       </Route>
 

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+import axios from "axios"; // npm install axios
 
 export default function Login({ setIsloggedIn, setPatient }) {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ export default function Login({ setIsloggedIn, setPatient }) {
         localStorage.setItem("patient", JSON.stringify(res.data.user));
         setPatient(res.data.user);
         setIsloggedIn(true);
-        navigate("/");
+        navigate("/portal");
       }
     } catch (err) {
       console.error("Login request failed:", err);
