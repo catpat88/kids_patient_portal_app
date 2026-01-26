@@ -5,9 +5,9 @@ session_start();
 
 // Database connection settings
 $host = '127.0.0.1';     // or 'localhost'
-$db_name = 'hospital_portal';     // Your database name
-$username = 'mu-admin'; // Your MySQL username
-$password = ')N.kH5/KMkgC!9eG'; // Your MySQL password
+$db_name = 'patient_portal';     // Your database name
+// $username = 'mu-admin'; // Your MySQL username
+// $password = ')N.kH5/KMkgC!9eG'; // Your MySQL password
 $charset = 'utf8mb4';
 
 // Data Source Name (DSN)
