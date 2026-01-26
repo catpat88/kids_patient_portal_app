@@ -98,7 +98,7 @@ export default function Login({ setIsloggedIn, setPatient }) {
                   Continue to portal
                 </button>
                 <Link
-                  to="/HomePage"
+                  to="/"
                   className="inline-block rounded-full bg-hippoBlue text-ink font-semibold px-5 py-2 shadow-soft hover:brightness-[.97] active:translate-y-[1px] transition text-center"
                 >
                   Back To Home Page

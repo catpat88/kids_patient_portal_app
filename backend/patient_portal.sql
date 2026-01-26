@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2026 at 06:45 PM
+-- Generation Time: Jan 26, 2026 at 11:08 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -39,7 +39,9 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`patient_id`, `username`, `password`, `patient_age`) VALUES
-(1, 'Ainsley', 'raea', 25);
+(1, 'Ainsley', 'raea', 18),
+(2, 'Chantelle', 'laveryc', 8),
+(3, 'Catrina', 'patonc', 7);
 
 -- --------------------------------------------------------
 
@@ -61,7 +63,9 @@ CREATE TABLE `patient_info` (
 --
 
 INSERT INTO `patient_info` (`info_id`, `patient_id_fk`, `doctor`, `next_app`, `medication`, `dose`) VALUES
-(1, 1, 'Dr. Smith', 'November 26th 2026', 'Co-codamol', '4x a day');
+(1, 1, 'Dr. Smith', 'November 26th 2026', 'Co-codamol', '4x a day'),
+(2, 2, 'Dr. Valentine', '29th February', 'Ibuprofen', '2x a day'),
+(3, 3, 'Dr. Chia', '13th February', 'Amoxicillin', '3x per day');
 
 --
 -- Indexes for dumped tables
@@ -94,7 +98,7 @@ ALTER TABLE `patients`
 -- AUTO_INCREMENT for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

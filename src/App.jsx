@@ -62,6 +62,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/public-map" element={<HospitalMap />} />
 
       <Route element={<MainLayout onLogout={handleLogout} />}>
         <Route
