@@ -25,6 +25,7 @@ export default function HomePage(){
     />
 
     {/* Right side */}
+  
     <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
       <h1 className="text-2xl font-semibold pb-12">
         Welcome to The Healthy Hippo Hub App
