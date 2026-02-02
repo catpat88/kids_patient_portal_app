@@ -20,23 +20,23 @@ const TARGET_MAX = 819;
 
 // Static list of links, defined once.
 const links = [
-  { label: "My Profile", to: "#/profile", Icon: User, bgColor: "bg-hippoBlue" },
+  { label: "My Profile", to: "#profile", Icon: User, bgColor: "bg-hippoBlue" },
   {
     label: "My Visit",
-    to: "#/visit",
+    to: "#visit",
     Icon: Hospital,
     bgColor: "bg-sunnyYellow",
   },
-  { label: "Hospital Map", to: "#/map", Icon: Map, bgColor: "bg-lilac" },
-  { label: "Videos", to: "#/videos", Icon: Video, bgColor: "bg-peach" },
-  { label: "Games", to: "#/games", Icon: Gamepad2, bgColor: "bg-mintGreen" },
+  { label: "Hospital Map", to: "#map", Icon: Map, bgColor: "bg-lilac" },
+  { label: "Videos", to: "#videos", Icon: Video, bgColor: "bg-peach" },
+  { label: "Games", to: "#games", Icon: Gamepad2, bgColor: "bg-mintGreen" },
   {
     label: "Departments",
-    to: "#/departments",
+    to: "#departments",
     Icon: Stethoscope,
     bgColor: "bg-coralPink",
   },
-  { label: "Quiz", to: "#/quiz", Icon: Star, bgColor: "bg-hippoBlue" },
+  { label: "Quiz", to: "#quiz", Icon: Star, bgColor: "bg-hippoBlue" },
 ];
 
 /**
