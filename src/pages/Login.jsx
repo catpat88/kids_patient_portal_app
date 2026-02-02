@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+import axios from "axios"; // npm install axios
 
 export default function Login({ setIsloggedIn, setPatient }) {
   const navigate = useNavigate();
@@ -22,10 +22,10 @@ export default function Login({ setIsloggedIn, setPatient }) {
       });
 
       if (res.data.status === "success") {
-        setIsloggedIn(true); // update parent state
-                // add conditional statement for DOB here
-                // if age > navigate to teen else kids
-        navigate("/"); // redirect to home
+        localStorage.setItem("patient", JSON.stringify(res.data.user));
+        setPatient(res.data.user);
+        setIsloggedIn(true);
+        navigate("/portal");
       }
     } catch (err) {
       console.error("Login request failed:", err);
@@ -97,12 +97,12 @@ export default function Login({ setIsloggedIn, setPatient }) {
                 >
                   Continue to portal
                 </button>
-                  <Link
-                    to="/HomePage"
-                    className="inline-block rounded-full bg-hippoBlue text-ink font-semibold px-5 py-2 shadow-soft hover:brightness-[.97] active:translate-y-[1px] transition text-center"
-                  >
-                   Back To Home Page
-                  </Link>
+                <Link
+                  to="/"
+                  className="inline-block rounded-full bg-hippoBlue text-ink font-semibold px-5 py-2 shadow-soft hover:brightness-[.97] active:translate-y-[1px] transition text-center"
+                >
+                  Back To Home Page
+                </Link>
               </div>
             </div>
           </form>

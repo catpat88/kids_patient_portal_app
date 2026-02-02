@@ -9,14 +9,14 @@ function simpleJumpToTop() {
     top: 0,
     left: 0,
     // The 'smooth' behavior is typically what users expect
-    behavior: "smooth" 
+    behavior: "smooth",
   });
 }
 
-export default function MainLayout() {
+export default function MainLayout({ onLogout }) {
   return (
     <>
-      <NavBar />
+      <NavBar onLogout={onLogout} />
 
       <main className="mx-auto max-w-6xl px-4">
         <Outlet />

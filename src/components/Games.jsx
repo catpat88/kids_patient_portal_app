@@ -1,16 +1,16 @@
-import React from 'react';
-import { Gamepad2, Puzzle, Play } from 'lucide-react';
+import React from "react";
+import { Gamepad2, Puzzle, Play, Crown, Brain } from "lucide-react";
 
 // Custom Snake Icon Component to match Lucide style
 const SnakeIcon = ({ className }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <path d="M2 13.5h2a2.5 2.5 0 0 0 2.5-2.5v-1a2.5 2.5 0 0 1 2.5-2.5h2a2.5 2.5 0 0 1 2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h2" />
@@ -19,35 +19,62 @@ const SnakeIcon = ({ className }) => (
   </svg>
 );
 
-export default function GamesList() {
-  // 1. DATA
-  const games = [
-    { 
-      id: 1, 
-      title: "Tic Tac Toe", 
-      description: "Classic strategy game for two players.",
+export default function GamesList({ patient }) {
+  // Determine if patient is over 12. This will make isOver12 return TRUE or FALSE.
+  const isOver12 = patient && patient.patient_age > 12;
+
+  // Games for patients 12 and under. Just holds the data.
+  const gamesUnder12 = [
+    {
+      id: 1,
+      title: "Tic Tac Toe",
       icon: <Puzzle className="w-8 h-8 text-ink" />,
-      color: "bg-mintGreen", 
-      link: "https://playtictactoe.org/"
+      color: "bg-mintGreen",
+      link: "https://playtictactoe.org/",
     },
-    { 
-      id: 2, 
-      title: "Snake Eater", 
-      description: "Navigate the grid and grow without hitting walls.",
-      // Updated to use the custom SnakeIcon
+    {
+      id: 2,
+      title: "Snake Eater",
       icon: <SnakeIcon className="w-8 h-8 text-ink" />,
-      color: "bg-sunnyYellow", 
-      link: "https://playsnake.org/"
+      color: "bg-sunnyYellow",
+      link: "https://playsnake.org/",
     },
-    { 
-      id: 3, 
-      title: "Space Invaders", 
-      description: "Defend Earth from waves of alien invaders.",
+    {
+      id: 3,
+      title: "Space Invaders",
       icon: <Gamepad2 className="w-8 h-8 text-ink" />,
-      color: "bg-peach", 
-      link: "https://freeinvaders.org/"
-    }
+      color: "bg-peach",
+      link: "https://freeinvaders.org/",
+    },
   ];
+
+  // Games for patients over 12
+  const gamesOver12 = [
+    {
+      id: 4,
+      title: "Chess",
+      icon: <Crown className="w-8 h-8 text-ink" />,
+      color: "bg-mintGreen",
+      link: "https://lichess.org/",
+    },
+    {
+      id: 5,
+      title: "Sudoku",
+      icon: <Brain className="w-8 h-8 text-ink" />,
+      color: "bg-sunnyYellow",
+      link: "https://sudoku.com/",
+    },
+    {
+      id: 6,
+      title: "2048",
+      icon: <Puzzle className="w-8 h-8 text-ink" />,
+      color: "bg-peach",
+      link: "https://play2048.co/",
+    },
+  ];
+
+  // Select game array based on age
+  const games = isOver12 ? gamesOver12 : gamesUnder12;
 
   return (
     <section id="games" className="scroll-mt-36 mb-5 rounded-3xl py-5 bg-card flex justify-center">
@@ -58,39 +85,44 @@ export default function GamesList() {
           <Gamepad2 className="w-6 h-6 text-gray-800" />
           <h2 className="text-lg font-semibold text-gray-800">Games</h2>
         </div>
-        <h3 className="text-sm py-3 text-ink">Choose a game to play:</h3>
+        <h3 className="text-sm py-3 text-ink">
+          {/* Some logic to check what to write here based on age. Checks if over 12 is TRUE. */}
+          {isOver12
+            ? "Challenge your mind with these games:"
+            : "Choose a fun game to play:"}
+        </h3>
 
         {/* SINGLE ROW LAYOUT */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-           {games.map((game) => (
-             <a 
-               href={game.link}
-               target="_blank"
-               rel="noopener noreferrer"
-               key={game.id}
-               className={`
+          {games.map((game) => (
+            <a
+              href={game.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={game.id}
+              className={`
                  aspect-square rounded-3xl shadow-sm hover:-translate-y-1 transition-all duration-300
                  flex flex-col items-center justify-center gap-3 p-4 group
                  ${game.color}
                  opacity-90 hover:opacity-100 hover:shadow-md
                `}
-             >
-               {/* Icon Container */}
-               <div className="bg-white/40 p-4 rounded-full backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                  {game.icon}
-               </div>
-               
-               {/* Text Content */}
-               <div className="text-center">
-                  <span className="block text-sm font-bold text-gray-800 uppercase tracking-wide mb-1">
-                    {game.title}
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-gray-600 group-hover:text-gray-900">
-                    Play Now <Play className="w-3 h-3 fill-current" />
-                  </span>
-               </div>
-             </a>
-           ))}
+            >
+              {/* Icon Container */}
+              <div className="bg-white/40 p-4 rounded-full backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                {game.icon}
+              </div>
+
+              {/* Text Content */}
+              <div className="text-center">
+                <span className="block text-sm font-bold text-gray-800 uppercase tracking-wide mb-1">
+                  {game.title}
+                </span>
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-gray-600 group-hover:text-gray-900">
+                  Play Now <Play className="w-3 h-3 fill-current" />
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
