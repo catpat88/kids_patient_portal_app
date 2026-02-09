@@ -110,7 +110,7 @@ export default function HospitalMap() {
                          {isMobile && <span className="text-[10px] bg-gray-100 px-1 rounded">tap to close</span>}
                       </div>
                       <p className="whitespace-normal leading-relaxed">{room.tooltip}</p>
-                      
+                      {/*  */}
                       <div className={`absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-brightyellow rotate-45
                         ${pos.dir === "up" ? "-bottom-2 border-b-2 border-r-2" : "-top-2 border-t-2 border-l-2"}
                       `}></div>
