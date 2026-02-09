@@ -55,6 +55,7 @@ app.post("/api/login", async (req, res) => {
         password,
       ]);
 
+      //Rows > 0 means we found a matching patient_id and password in the database. There is an existing row
     if (rows.length > 0) {
       res.json({
         status: "success",
@@ -75,6 +76,7 @@ app.post("/api/login", async (req, res) => {
 app.get("/api/patient-info/:id", async (req, res) => {
   const patientId = req.params.id;
 
+  // This pulls the data of a patient using their ID. It then says if there are no rows equalling that Id, then the patient has no info
   try {
     const [rows] = await pool
       .promise()

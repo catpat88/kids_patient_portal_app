@@ -15,6 +15,7 @@ import Quiz from "./components/Quiz";
 
 function Portal({ patient, patientInfo }) {
   return (
+    // Passing required patient data into components
     <>
       <ProfileHero patient={patient} patientInfo={patientInfo} />
       <MyVisit />
@@ -32,7 +33,7 @@ export default function App() {
   const [patient, setPatient] = useState(null);
   const [patientInfo, setPatientInfo] = useState(null);
 
-  // Load patient from localStorage on refresh
+  // Load patient info from localStorage on refresh, this was passed in from login component. This keeps the user logged in even if they refresh the page, until they click logout which clears localStorage
   useEffect(() => {
     const stored = localStorage.getItem("patient");
     if (stored) {
@@ -42,7 +43,7 @@ export default function App() {
     }
   }, []);
 
-  // Fetch patient_info when patient is available
+  // Fetch patient_info when patient is available.
   useEffect(() => {
     if (!patient) return;
 
@@ -52,6 +53,7 @@ export default function App() {
       .catch((err) => console.error("Failed to fetch patient info:", err));
   }, [patient]);
 
+  // Clear patient data and login state on logout
   const handleLogout = () => {
     localStorage.removeItem("patient");
     setPatient(null);

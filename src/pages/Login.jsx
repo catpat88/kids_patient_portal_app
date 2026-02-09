@@ -5,22 +5,24 @@ import axios from "axios"; // npm install axios
 export default function Login({ setIsloggedIn, setPatient }) {
   const navigate = useNavigate();
 
-  // Renamed for consistency with backend: patient_id
+  // The useState hooks get the users input for their login credentials. The patient_id is used instead of username to match the database structure. The error state is used to display any login errors to the user.
   const [patient_id, setPatientID] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
+    // Prevent the page from refreshing when the form is submitted. This can lose the data
     e.preventDefault();
 
     try {
-      // Send patient_id instead of username
+      // Send patient_id
       const res = await axios.post("http://localhost:4000/api/login", {
         patient_id,
         password,
         // add age - get from stored DOB
       });
 
+      //On a successful login, send the user data to localStorage and update the app state to reflect that the user is logged in. Then navigate to the portal page.
       if (res.data.status === "success") {
         localStorage.setItem("patient", JSON.stringify(res.data.user));
         setPatient(res.data.user);
@@ -30,6 +32,7 @@ export default function Login({ setIsloggedIn, setPatient }) {
     } catch (err) {
       console.error("Login request failed:", err);
 
+      //Some error states to help us understand why it isnt logging in
       if (err?.response?.status === 401) {
         setError("Invalid credentials. Please try again.");
       } else if (
