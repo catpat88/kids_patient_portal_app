@@ -14,7 +14,8 @@ export default {
         peach: "#FFB3AB",          
         lilac: "#CDB4FF",          
         sunnyYellow: "#FFE97A",    
-        coralPink: "#FFD6E8",      
+        coralPink: "#FFD6E8",  
+        brightYellow: "#f6ff00ff",    
 
         // 🌤 Backgrounds
         page: "#ffffffff",
