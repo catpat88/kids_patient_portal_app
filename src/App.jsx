@@ -1,7 +1,10 @@
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import { Routes, Route } from "react-router-dom";
+import MainLayout from "./components/MainLayout.jsx";
+import HomePage from "./pages/HomePage.jsx";
 import Login from "./pages/Login.jsx";
-import NavBar from "./components/NavBar";
+
 import ProfileHero from "./components/ProfileHero";
 import MyVisit from "./components/MyVisit";
 import HospitalMap from "./components/HospitalMap";
@@ -9,43 +12,71 @@ import Videos from "./components/Videos";
 import Games from "./components/Games";
 import Departments from "./components/Departments";
 import Quiz from "./components/Quiz";
-import Footer from "./components/Footer";
 
-
-function Home() {
+function Portal({ patient, patientInfo }) {
   return (
     <>
-      <NavBar />
-
-      <main className="mx-auto max-w-6xl px-4">
-        <ProfileHero />
-        <MyVisit />
-        <HospitalMap />
-        <Videos />
-        <Games />
-        <Departments />
-        <Quiz />
-      </main>
-
-      <Footer />
-
-      {/* Back-to-top bubble */}
-      <a
-        href="#top"
-        className="fixed bottom-6 right-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-hippoBlue text-ink shadow-soft text-2xl"
-        aria-label="Back to top"
-      >
-        ↑
-      </a>
+      <ProfileHero patient={patient} patientInfo={patientInfo} />
+      <MyVisit />
+      <HospitalMap />
+      <Videos />
+      <Games patient={patient} />
+      <Departments />
+      <Quiz />
     </>
   );
 }
 
 export default function App() {
+  const [isLoggedIn, setIsloggedIn] = useState(false);
+  const [patient, setPatient] = useState(null);
+  const [patientInfo, setPatientInfo] = useState(null);
+
+  // Load patient from localStorage on refresh
+  useEffect(() => {
+    const stored = localStorage.getItem("patient");
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      setPatient(parsed);
+      setIsloggedIn(true);
+    }
+  }, []);
+
+  // Fetch patient_info when patient is available
+  useEffect(() => {
+    if (!patient) return;
+
+    fetch(`http://localhost:4000/api/patient-info/${patient.patient_id}`)
+      .then((res) => res.json())
+      .then((data) => setPatientInfo(data))
+      .catch((err) => console.error("Failed to fetch patient info:", err));
+  }, [patient]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("patient");
+    setPatient(null);
+    setPatientInfo(null);
+    setIsloggedIn(false);
+  };
+
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/public-map" element={<HospitalMap />} />
+
+      <Route element={<MainLayout onLogout={handleLogout} />}>
+        <Route
+          path="/portal"
+          element={<Portal patient={patient} patientInfo={patientInfo} />}
+        />
+      </Route>
+
+      <Route
+        path="/login"
+        element={
+          <Login setIsloggedIn={setIsloggedIn} setPatient={setPatient} />
+        }
+      />
     </Routes>
   );
 }
